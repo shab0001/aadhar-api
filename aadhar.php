@@ -1,13 +1,13 @@
 <?php
 
-//curl request for generating auth token
+// curl request for generating auth token
 // $url='https://api.sandbox.co.in/authenticate';
 
 $headers[]='accept: application/json';
-$headers[]='x-api-key: key_live_xQqPk3X7ZJlYsSs9hij7vZ8xu9g5rvc1';
+$headers[]='x-api-key: key_live_Sx1Su90UVBwfINTozZkEtOGKdJiEN3jf';
 $headers[]='x-api-version: 1.0';
-
-// $headers[]='x-api-secret: secret_live_MfshrIYD9quRCokmUqyxdPEGGThNWqtM';
+            
+// $headers[]='x-api-secret: secret_live_7IAEFBxofHBpmDDndebpVs0frTIOBBkR';
 
 
 // $ch = curl_init($url);
@@ -18,8 +18,7 @@ $headers[]='x-api-version: 1.0';
 // echo $result;
 
 
-$auth_token='eyJhbGciOiJIUzUxMiJ9.eyJhdWQiOiJBUEkiLCJyZWZyZXNoX3Rva2VuIjoiZXlKaGJHY2lPaUpJVXpVeE1pSjkuZXlKaGRXUWlPaUpCVUVraUxDSnpkV0lpT2lKM2FHOXRiMjUxWjJseWFVQm5iV0ZwYkM1amIyMGlMQ0poY0dsZmEyVjVJam9pYTJWNVgyeHBkbVZmZUZGeFVHc3pXRGRhU214WmMxTnpPV2hwYWpkMldqaDRkVGxuTlhKMll6RWlMQ0pwYzNNaU9pSmhjR2t1YzJGdVpHSnZlQzVqYnk1cGJpSXNJbVY0Y0NJNk1UY3lOakExTURJNU5Dd2lhVzUwWlc1MElqb2lVa1ZHVWtWVFNGOVVUMHRGVGlJc0ltbGhkQ0k2TVRZNU5EUXlOemc1TkgwLlNLNnB4dzNIM200UXVHeVZ6OXJBSE9ock0zUWlLYVJQc3kwZmQxSHJLWHlKLVBPTVdud0wyQkxFVTA0MnBpcDMzRkNYcldYQ1NVWTBHQVpXQmg5QXJRIiwic3ViIjoid2hvbW9udWdpcmlAZ21haWwuY29tIiwiYXBpX2tleSI6ImtleV9saXZlX3hRcVBrM1g3WkpsWXNTczloaWo3dlo4eHU5ZzVydmMxIiwiaXNzIjoiYXBpLnNhbmRib3guY28uaW4iLCJleHAiOjE2OTQ1MTQyOTQsImludGVudCI6IkFDQ0VTU19UT0tFTiIsImlhdCI6MTY5NDQyNzg5NH0.514LsoKcf9vl_Zu8v6hVY7cZhhCmbpRnHVRYVEkIr5ARlI-rcwg6MBf45SXF7tvkbmyo1siP0sRr-SGO889A1w';
-
+$auth_token='eyJhbGciOiJIUzUxMiJ9.eyJhdWQiOiJBUEkiLCJyZWZyZXNoX3Rva2VuIjoiZXlKaGJHY2lPaUpJVXpVeE1pSjkuZXlKaGRXUWlPaUpCVUVraUxDSnpkV0lpT2lKemVXVmtjMmhoWWpReU5qRTRRR2R0WVdsc0xtTnZiU0lzSW1Gd2FWOXJaWGtpT2lKclpYbGZiR2wyWlY5VGVERlRkVGt3VlZaQ2QyWkpUbFJ2ZWxwclJYUlBSMHRrU21sRlRqTnFaaUlzSW1semN5STZJbUZ3YVM1ellXNWtZbTk0TG1OdkxtbHVJaXdpWlhod0lqb3hOelF5T0RFek1UZzNMQ0pwYm5SbGJuUWlPaUpTUlVaU1JWTklYMVJQUzBWT0lpd2lhV0YwSWpveE56RXhNamMzTVRnM2ZRLmJ5dnFsRFBOakJzX1hzZlRPdDlGVmI4RVluNHpoTU9lOVNpRDRNcnJoTmxWUVlXbXRybHFjYkVsQ1kwQUxlU0I4bnhicVpycmkycHJ3NFNVMmwzSWV3Iiwic3ViIjoic3llZHNoYWI0MjYxOEBnbWFpbC5jb20iLCJhcGlfa2V5Ijoia2V5X2xpdmVfU3gxU3U5MFVWQndmSU5Ub3paa0V0T0dLZEppRU4zamYiLCJpc3MiOiJhcGkuc2FuZGJveC5jby5pbiIsImV4cCI6MTcxMTM2MzU4NywiaW50ZW50IjoiQUNDRVNTX1RPS0VOIiwiaWF0IjoxNzExMjc3MTg3fQ.6pum0UXyVmyVzx8O22KpJ2RgLxDe7XKSZO-c9qUz1vkjFvHkGciC0oGjpwsEjOzucQsqvznCI9TKEjqQxLysDA';
 
 if(isset($_GET['sendotp'])){
     $aadharno=$_POST['aadhar_no'];
