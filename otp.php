@@ -10,6 +10,7 @@ if($e = curl_error($ch)) {
     echo $e;
 } else {
     $data = json_decode($resp,true);
+    if (isset($data['access_token']))
     $access_token = $data['access_token'];
 }
 curl_close($ch);
@@ -73,4 +74,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['otp']) && isset($_POS
     // Invalid request
     echo json_encode(array('code' => 400, 'message' => 'Bad Request'));
 }
-?>
+

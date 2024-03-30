@@ -10,7 +10,7 @@ if($e = curl_error($ch)) {
     echo $e;
 } else {
     $data = json_decode($resp,true);
-    if (isset($data['access_token'])) 
+    if (isset($data['access_token']))
         $access_token = $data['access_token'];
 }
 curl_close($ch);
@@ -71,4 +71,3 @@ if(isset($_POST['aadhar_no'])) {
     // If 'aadhar_no' parameter is not set, return an error message
     echo "Error: 'aadhar_no' parameter is not set.";
 }
-?>
