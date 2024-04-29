@@ -40,7 +40,7 @@ if(isset($_POST['aadhar_no'])) {
         'Authorization: ' . $access_token, 
         'Accept: application/json',
         'Content-Type: application/json',
-        'x-api-key: key_live_Sx1Su90UVBwfINTozZkEtOGKdJiEN3jf',
+        'x-api-key: key_live_NMWtgqqivdOUbysSaQf6ZiENSfhJUf7Q',
         'x-api-version: 1.0'
     );
 
