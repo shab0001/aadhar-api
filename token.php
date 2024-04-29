@@ -4,10 +4,10 @@
 $url='https://api.sandbox.co.in/authenticate';
 
 $headers[]='accept: application/json';
-$headers[]='x-api-key: key_live_Sx1Su90UVBwfINTozZkEtOGKdJiEN3jf';
+$headers[]='x-api-key: key_live_NMWtgqqivdOUbysSaQf6ZiENSfhJUf7Q';
 $headers[]='x-api-version: 1.0';
 
-$headers[]='x-api-secret: secret_live_7IAEFBxofHBpmDDndebpVs0frTIOBBkR';
+$headers[]='x-api-secret: secret_live_BoiZbWFgTWOrPrzaom8a1DSpgWn8yzHt';
 
 
 $ch = curl_init($url);

@@ -17,7 +17,7 @@ curl_close($ch);
 
 // Verify
 $headers[]='accept: application/json';
-$headers[]='x-api-key: key_live_Sx1Su90UVBwfINTozZkEtOGKdJiEN3jf';
+$headers[]='x-api-key: key_live_NMWtgqqivdOUbysSaQf6ZiENSfhJUf7Q';
 $headers[]='x-api-version: 1.0';
 
 
