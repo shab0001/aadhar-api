@@ -50,7 +50,7 @@
             padding: 20px;
         }
         .custom-input {
-            background-color: rgb(203, 214, 217); /* Change this to your desired color */
+            background-color: rgb(41, 43, 41); /* Change this to your desired color */
             /* Add any additional styling you want */
         }
         .navbar {
@@ -849,7 +849,7 @@
         <!-- enter your aadhar no -->
         <div class="card col-md-5 mx-auto my-3 shadow-sm" id="enter_aadhar">
             <div class="card-body">
-                <h2 class="-mb-0.5">Enter Your Aadhar Card Number</h2>
+                <!-- <h2 class="-mb-0.5">Enter Your Aadhar Card Number</h2> -->
                 <div class="space-y-4 mt-2 text-lg px-3 md:space-y-12">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-fingerprint"></i></span>
                     <input type="number" class="border-b-2 w-2/3 mx-auto block text-center font-bold mb-2 md:max-w-xl md:mx-auto md:block md:my-4 md:mb-8 custom-input" id="aadhar" placeholder="Enter your aadhar no" aria-label="Username" aria-describedby="basic-addon1">
@@ -862,11 +862,10 @@
                 <button class="px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-semibold block mx-auto" id="aadhar_btn">
                     <i class="bi bi-send"></i> SEND OTP
                 </button>
-                <!-- <button class="px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-semibold block mx-auto" id="st">Login Metamask</button> -->
-                <button class="px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-semibold block mx-auto" style="display:none" disabled>
+                <button class="px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-bold block mx-auto bg-blue-700" id="otp_loading_btn" style="display:none" disabled>
                     <div class="spinner-border spinner-border-sm" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div> SEND OTP
+                        <span class="visually-hidden"></span>
+                    </div> SENDING....
                 </button>
             </div>
         </div>
@@ -888,8 +887,8 @@
                 </button>
                 <button class="px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-bold block mx-auto bg-blue-700" id="otp_loading_btn" style="display:none" disabled>
                     <div class="spinner-border spinner-border-sm" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div> VERIFY OTP
+                        <span class="visually-hidden"></span>
+                    </div> VERIFYING.....
                 </button>
             </div>
         </div>
