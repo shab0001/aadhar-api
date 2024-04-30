@@ -859,13 +859,13 @@
                 </div>
                 <!-- Line of space -->
         <div class="my-4"></div>
-                <button class="px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-semibold block mx-auto" id="aadhar_btn">
+        <button class="px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-bold block mx-auto bg-blue-700" id="aadhar_btn" onclick="showSecondButton()">
                     <i class="bi bi-send"></i> SEND OTP
                 </button>
-                <button class="px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-bold block mx-auto bg-blue-700" id="otp_loading_btn" style="display:none" disabled>
+                <button class="px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-semibold block mx-auto" id="otp_loading_btn" style="display:none" disabled>   
                     <div class="spinner-border spinner-border-sm" role="status">
-                        <span class="visually-hidden"></span>
-                    </div> SENDING....
+                        <span class="visually-hidden">SENDING....</span>
+                    </div> 
                 </button>
             </div>
         </div>
@@ -882,13 +882,13 @@
                 </div>
                 <div id="oerrormessage" class="form-text mb-3 text-danger">
                 </div>
-                <button class="px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-bold block mx-auto bg-blue-700" id="otp_btn">
+                <button class="px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-bold block mx-auto bg-blue-700" id="otp_btn" onclick="showSecondButton2()">
                     <i class="bi bi-shield-check"></i> VERIFY OTP
                 </button>
-                <button class="px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-bold block mx-auto bg-blue-700" id="otp_loading_btn" style="display:none" disabled>
+                <button class="px-6 py-2 border-slate-50 border-2 rounded-md text-slate-50 button-shadow-big text-lg font-semibold block mx-auto" id="otp_loading_btn2" style="display:none" disabled>
                     <div class="spinner-border spinner-border-sm" role="status">
-                        <span class="visually-hidden"></span>
-                    </div> VERIFYING.....
+                        <span class="visually-hidden">VERIFYING......</span>
+                    </div> 
                 </button>
             </div>
         </div>
@@ -1035,6 +1035,14 @@
             })
 
         })
+        function showSecondButton() {
+        var secondButton = document.getElementById('otp_loading_btn');
+        secondButton.style.display = 'inline-block';
+    }
+    function showSecondButton2() {
+        var secondButton = document.getElementById('otp_loading_btn2');
+        secondButton.style.display = 'inline-block';
+    }
         document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("aadhar").addEventListener("keypress", function(event) {
                     if (event.key === "Enter") {
