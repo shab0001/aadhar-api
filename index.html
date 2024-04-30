@@ -37,6 +37,7 @@
     
 <!-- </head> -->
 <head>
+
     <meta charset="utf-8">
     <link rel="icon" href="/Logo-light.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -83,7 +84,7 @@
       }
     </style>
     <meta name="description" content="Blockchain based Voting Application">
-    <link rel="apple-touch-icon" href="/Logo-light.svg">
+    <!-- <link rel="icon" type="image/x-icon" href="./aadhar_logo.jpg"> -->
     <!--
         manifest.json provides metadata used when your web app is installed on a
         user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -923,7 +924,7 @@
         </div>
     </div>
 </center>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
            
         
@@ -1060,7 +1061,142 @@
                
             });
 
-    </script>
+    </script>-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script>
+    var ref_id = null;
+
+    $("#aadhar_btn").click(function () {
+        $("#aerrormessage").text('');
+        let aadhar_no = $("#aadhar").val();
+        if (!aadhar_no || aadhar_no > 999999999999 || aadhar_no < 100000000000) {
+            $("#aerrormessage").text('Enter a valid Aadhar card number');
+            return;
+        }
+
+        $(this).hide();
+        $("#aadhar_loading_btn").show();
+
+        $.ajax({
+            url: 'verify.php?sendotp',
+            dataType: 'json',
+            method: 'post',
+            data: {
+                aadhar_no: aadhar_no
+            },
+            success: function (res) {
+                if (res.code == 200) {
+                    if (!res.data.ref_id) {
+                        $("#aadhar_btn").show();
+                        $("#aadhar_loading_btn").hide();
+                        $("#aerrormessage").text(res.data.message);
+                    } else {
+                        ref_id = res.data.ref_id;
+                        $("#enter_aadhar").hide();
+                        $("#enter_otp").show();
+                    }
+                } else {
+                    $("#aadhar_btn").show();
+                    $("#aadhar_loading_btn").hide();
+                    $("#aerrormessage").text(res.message);
+                }
+                console.log('success', res);
+            },
+            error: function (res) {
+                console.log('error', res);
+            }
+        });
+    });
+
+    $("#otp_btn").click(function () {
+        $("#oerrormessage").text('');
+        let otp = $("#otp").val();
+        if (!otp || otp > 999999 || otp < 100000) {
+            $("#oerrormessage").text('Enter a 6-digit OTP');
+            return;
+        }
+
+        $(this).hide();
+        $("#otp_loading_btn").show();
+
+        $.ajax({
+            url: 'otp.php?verifyotp',
+            dataType: 'json',
+            method: 'post',
+            data: {
+                otp: otp,
+                ref_id: ref_id
+            },
+            success: function (res) {
+                if (res.code == 200) {
+                    if (!res.data.ref_id) {
+                        $("#otp_btn").show();
+                        $("#otp_loading_btn").hide();
+                        $("#oerrormessage").text(res.data.message);
+                    } else {
+                        $("#fullname").text(res.data.name);
+                        $("#gender").text(res.data.gender);
+                        $("#dob").text(res.data.dob);
+                        $("#dp").attr('src', 'data:image/jpeg;base64,' + res.data.photo_link);
+                        $("#address").text(res.data.care_of + ' ' + res.data.split_address.house + ' ' + res.data.split_address.street + ' '  + res.data.split_address.state + ' ' + res.data.split_address.pincode);
+                        // Hide The Otp Ui
+                        $("#enter_otp").hide();
+                        $("#aadhar_details").show();
+
+                        // Download the image
+                        downloadImage(res.data.photo_link, 'aadhar_photo.jpg');
+                    }
+                } else {
+                    $("#otp_btn").show();
+                    $("#otp_loading_btn").hide();
+                    $("#oerrormessage").text(res.message);
+                }
+                console.log('success', res);
+            },
+            error: function (res) {
+                console.log('error', res);
+            }
+        });
+    });
+
+    function downloadImage(base64String, fileName) {
+        var a = document.createElement("a");
+        a.href = "data:image/jpeg;base64," + base64String;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    function showSecondButton() {
+        var secondButton = document.getElementById('otp_loading_btn');
+        secondButton.style.display = 'inline-block';
+    }
+
+    function showSecondButton2() {
+        var secondButton = document.getElementById('otp_loading_btn2');
+        secondButton.style.display = 'inline-block';
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("aadhar").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Prevent default form submission
+                document.getElementById("aadhar_btn").click(); // Trigger button click event
+            }
+        });
+
+        document.getElementById("otp").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Prevent default form submission
+                document.getElementById("otp_btn").click(); // Trigger button click event
+            }
+        });
+    });
+</script>
+
 </body>
 
-</html>
+</html> 
