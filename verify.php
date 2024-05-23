@@ -17,7 +17,7 @@ curl_close($ch);
 
 // Verify
 $headers[]='accept: application/json';
-$headers[]='x-api-key: key_live_NMWtgqqivdOUbysSaQf6ZiENSfhJUf7Q';
+$headers[]='x-api-key: key_live_urNPCxHzSAe8TkuFt0mlXLaBrUUedgi3';
 $headers[]='x-api-version: 1.0';
 
 
@@ -40,7 +40,7 @@ if(isset($_POST['aadhar_no'])) {
         'Authorization: ' . $access_token, 
         'Accept: application/json',
         'Content-Type: application/json',
-        'x-api-key: key_live_NMWtgqqivdOUbysSaQf6ZiENSfhJUf7Q',
+        'x-api-key: key_live_urNPCxHzSAe8TkuFt0mlXLaBrUUedgi3',
         'x-api-version: 1.0'
     );
 
